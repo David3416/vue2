@@ -2,9 +2,8 @@
 
 <template>
   <header class="footer">
-    <div class="wrapper"></div>
+    <div class="wrapper">
+      <div class="black"></div>
+    </div>
   </header>
 </template>
-
-<style scoped></style>
-м

@@ -1,35 +1,42 @@
 :root {
-  --link-primary: #ffffff;
-  --link-primary-hover: #dddddd;
+  --link-primary: #4f9cf9;
+  --link-primary-hover: #295c9b;
 
   --button-yellow: #ffe492;
   --button-yellow-hover: #dabc64;
 
-  --button-blue: #ffe492;
-  --button-blue-hover: #dabc64;
+  --button-blue: #4f9cf9;
+  --button-blue-hover: #295c9b;
 }
 
 .header {
+  top: 0;
   width: 100%;
-  position: absolute;
   height: 92px;
+  transition: 0.3s;
+  position: fixed;
+}
+.header-active {
+  background-color: black;
+  z-index: 1000;
+}
+.qq {
+  margin-top: 100px;
 }
 .wrapper {
   max-width: 1480px;
   margin: 0 auto;
-  background-color: blue;
-  padding: 16px 0;
 }
 .header-wrapper {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 50% 50%;
+  padding: 16px 0;
 }
 
 .butt-wrapper {
   display: flex;
 }
 .header-list {
-  background-color: brown;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -38,21 +45,79 @@
 .header-item {
   display: flex;
   align-items: center;
-  background-color: blueviolet;
 }
 .header-link {
   text-decoration: none;
   color: var(--link-primary);
   font-size: 18px;
 }
-
+.header-link:hover {
+  color: var(--link-primary-hover);
+}
 .butt-yellow {
-  /* display: flex; */
   padding: 18px 40px;
   background-color: var(--button-yellow);
+  margin-right: 25px;
 }
 .butt-blue {
-  /* display: flex; */
+  white-space: nowrap;
   padding: 18px 34px;
-  background-color: var(--button-yellow);
+  background-color: var(--button-blue);
+}
+.butt-radius {
+  border-radius: 5px;
+  display: inline-block;
+}
+/* header ends */
+
+/* intro starts */
+.intro {
+  padding-top: 232px;
+  margin-bottom: 140px;
+}
+.intro-wrapper {
+  display: grid;
+  grid-template-columns: 656px 824px;
+  align-items: center;
+}
+
+.intro-foto-wrapper {
+  max-width: 824px;
+  height: 549px;
+  overflow: hidden;
+}
+
+.intro-foto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.intro-title {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.intro-subtitle {
+  margin-bottom: 60px;
+  font-size: 18px;
+  font-family: inter;
+  width: 656px;
+}
+/* intro ends */
+
+/* work starts */
+.work-wrapper {
+  display: grid;
+  grid-template-columns: 710px 670px;
+  grid-gap: 100px;
+  height: 661px;
+}
+/* work ends */
+
+.footer {
+  background-color: black;
+  display: block;
+  height: 100px;
 }
