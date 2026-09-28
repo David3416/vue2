@@ -12,7 +12,6 @@ export default {
 
 <template>
   <HeaderComponent />
-
   <RouterView />
   <FooterComponent />
 </template>
