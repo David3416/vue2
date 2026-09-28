@@ -204,9 +204,82 @@
   grid-template-columns: 710px 670px;
   grid-gap: 100px;
   height: 661px;
+  margin-bottom: 140px;
 }
+
 /* work ends */
 
+.slider {
+  overflow: hidden;
+  width: 1480px;
+  /* background-color: #4f9cf9; */
+}
+.slider-track {
+  display: flex;
+  transition: transform 0.4s ease;
+  width: 2492px;
+}
+.card-img-wrapper {
+  box-sizing: border-box;
+  height: 480px;
+  width: 472px;
+  overflow: hidden;
+  display: block;
+  box-shadow: 5px 5px 20px rgba(100, 100, 100, 0.7);
+  background-color: #dabc64;
+  padding: 60px;
+}
+.card {
+  flex: 0 0 472px;
+  margin-right: 32px;
+}
+
+.card:last-child {
+  margin-right: 0;
+}
+.slider-track > div {
+  min-width: 472px;
+}
+.card-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 30px;
+}
+.revue-caption {
+  margin-bottom: 40px;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.revue-name {
+  margin-bottom: 50px;
+}
+.slider-butt-wrapper {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.slider-butt {
+  border: none;
+  background: none;
+}
+.right-arrow {
+  height: 70px;
+  width: 70px;
+}
+.right-arrow ^hover {
+  height: 70px;
+  width: 70px;
+}
+.left-arrow {
+  height: 70px;
+  width: 70px;
+}
 .footer {
   background-color: black;
   display: block;
