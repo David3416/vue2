@@ -169,7 +169,42 @@
 .intro-wrapper {
   display: grid;
   grid-template-columns: 656px 824px;
-  align-items: center;
+  /* align-items: center; */
+}
+.intro-title-wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.section-title {
+  display: block;
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.title-brush {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.brush-intro {
+  left: 170px;
+  top: 165px;
+  z-index: -1;
+}
+
+.brush-work {
+  left: 50px;
+  top: 266px;
+  z-index: -1;
+}
+.intro-subtitle {
+  margin-bottom: 60px;
+  font-size: 18px;
+  font-family: inter;
+  max-width: 656px;
 }
 
 .intro-foto-wrapper {
@@ -185,20 +220,9 @@
   object-fit: cover;
   object-position: center;
 }
-.intro-title {
-  font-size: 64px;
-  font-weight: 700;
-  margin-bottom: 24px;
-}
-.intro-subtitle {
-  margin-bottom: 60px;
-  font-size: 18px;
-  font-family: inter;
-  width: 656px;
-}
 /* intro ends */
 
-/* work starts */
+/* WORK STARTS    ------------------------------------ */
 .work-wrapper {
   display: grid;
   grid-template-columns: 710px 670px;
@@ -206,9 +230,60 @@
   height: 661px;
   margin-bottom: 140px;
 }
+.work-img {
+  width: 710px;
+  height: 661px;
+}
+/*WORK ENDS    ----------------------------------------- */
 
-/* work ends */
+/* PLAN STARTS--------------------------------- */
+.plan-wrapper {
+  margin-bottom: 140px;
+}
+.plan-title-wrapper {
+  text-align: center;
+  position: relative;
+  margin-bottom: 60px;
+}
+.brush-plan {
+  position: absolute;
+  top: 30px;
+  z-index: -1;
+  left: 600px;
+}
+.plan-subtitle {
+  max-width: 980px;
+  margin: 0 auto;
+}
+.plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.plan {
+  max-width: 100px;
+}
 
+/* PLAN ENDS--------------------------------- */
+
+/* TRUST ENDS--------------------------------- */
+.trusted-title-wrapper {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  margin-bottom: 60px;
+}
+.trusted-subtitle {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 18px;
+  font-family: inter;
+  max-width: 979px;
+}
+.brush-trust {
+  z-index: -1;
+  top: 40px;
+  left: 500px;
+}
 .slider {
   overflow: hidden;
   width: 1480px;
@@ -220,13 +295,14 @@
   width: 2492px;
 }
 .card-img-wrapper {
+  margin: 10px;
   box-sizing: border-box;
   height: 480px;
   width: 472px;
   overflow: hidden;
   display: block;
-  box-shadow: 5px 5px 20px rgba(100, 100, 100, 0.7);
-  background-color: #dabc64;
+  box-shadow: -5px 5px 9px rgba(100, 100, 100, 0.5);
+  /* background-color: #dabc64; */
   padding: 60px;
 }
 .card {
@@ -268,18 +344,14 @@
   border: none;
   background: none;
 }
-.right-arrow {
-  height: 70px;
-  width: 70px;
+.arrow-style {
+  height: 80px;
+  width: 80px;
 }
-.right-arrow ^hover {
-  height: 70px;
-  width: 70px;
+.arrow-style:hover {
+  scale: 107%;
 }
-.left-arrow {
-  height: 70px;
-  width: 70px;
-}
+/* TRUST ENDS--------------------------------- */
 .footer {
   background-color: black;
   display: block;

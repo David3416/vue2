@@ -1,6 +1,7 @@
 <script>
-// import HeaderComponent from '../components/HeaderComponent.vue'
 // import FooterComponent from '../components/FooterComponent.vue'
+import { playClickSound } from '../utils/clickSound'
+import brushImg from '../assets/svg/brush-img.svg'
 
 import img1 from '../assets/images/img-intro1.png'
 import img2 from '../assets/images/img-intro2.png'
@@ -23,6 +24,7 @@ export default {
   data() {
     return {
       introImg,
+      brushImg,
       workImg,
       right_arrow,
       left_arrow,
@@ -42,6 +44,7 @@ export default {
     }
   },
   methods: {
+    playClickSound,
     nextSlide() {
       if (this.currentSlide < this.reviews.length - 3) {
         this.currentSlide++
@@ -64,8 +67,8 @@ export default {
       <div class="wrapper">
         <div class="intro-wrapper">
           <div class="intro-title-wrapper">
-            <h1 class="intro-title">Get More Done with whitepace!!!!!!</h1>
-
+            <h1 class="section-title">Get More Done with whitepace!!!!!!</h1>
+            <img :src="brushImg" class="title-brush brush-intro" />
             <p class="intro-subtitle">
               Project management software that enables your teams to collaborate, plan, analyze and
               manage everyday tasks
@@ -81,20 +84,56 @@ export default {
       </div>
     </section>
 
-    <!-- Work starts -->
+    <!-- WORK STARTS -------------------------------------->
     <section class="work">
       <div class="wrapper">
         <div class="work-wrapper">
           <img :src="workImg" class="work-img" />
+          <div class="intro-title-wrapper">
+            <h1 class="section-title">Work together</h1>
+            <img :src="brushImg" class="title-brush brush-work" />
+            <p class="intro-subtitle">
+              With whitepace, share your notes with your colleagues and collaborate on them. You can
+              also publish a note to the internet and share the URL with others.
+            </p>
 
-          <div class="work-title-wrapper">
-            <div class="work-title" id="features">Work togather</div>
+            <p class="butt-blue butt-radius">Try Whitepace free</p>
           </div>
         </div>
       </div>
     </section>
+    <!-- WORK ENDS -------------------------------------->
+
+    <!-- PLAN STAR ----------------------------------------------------------->
+    <section class="plan-section">
+      <div class="wrapper">
+        <div class="plan-wrapper">
+          <div class="plan-title-wrapper">
+            <h1 class="section-title">Choose Your Plan</h1>
+            <img :src="brushImg" class="title-brush brush-plan" />
+            <p class="plan-subtitle">
+              With whitepace, share your notes with your colleagues and collaborate on them. You can
+              also publish a note to the internet and share the URL with others.
+            </p>
+          </div>
+          <div class="plans"></div>
+        </div>
+      </div>
+    </section>
+    <!-- PLAN STAR ----------------------------------------------------------->
+
+    <!-- TRUST START ------------------------------------------------------------>
     <section class="trusted">
       <div class="wrapper">
+        <div class="trusted-title-wrapper">
+          <h1 class="section-title">See what our trusted users Say</h1>
+          <img :src="brushImg" class="title-brush brush-trust" />
+          <p class="trusted-subtitle">
+            Whether you want to get organized, keep your personal life on track, or boost workplace
+            productivity, Evernote has the right plan for you.
+          </p>
+        </div>
+
         <div class="slider">
           <div
             class="slider-track"
@@ -109,19 +148,20 @@ export default {
               </div>
             </div>
           </div>
+
           <div class="slider-butt-wrapper">
-            <button @click="nextSlide" class="slider-butt">
-              <img :src="left_arrow" class="left_arrow" />
+            <button @click="prevSlide" class="slider-butt" @mouseclick="playClickSound">
+              <img :src="left_arrow" class="arrow-style" />
             </button>
 
-            <button @click="prevSlide" class="slider-butt">
-              <img :src="right_arrow" class="right-arrow" />
+            <button @click="nextSlide" class="slider-butt">
+              <img :src="right_arrow" class="arrow-style" />
             </button>
           </div>
         </div>
       </div>
     </section>
-    <!-- Work ends -->
+    <!-- TRUST END ------------------------------------------------------------>
   </main>
 
   <!-- <FooterComponent /> -->

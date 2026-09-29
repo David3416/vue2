@@ -1,29 +1,21 @@
 <script>
 import headerLogo from '../assets/svg/header-logo.svg'
 import { smoothScroll } from '../utils/smoothScroll'
-import buttonSfx from '../assets/sound/click.mp3'
+import { playClickSound } from '../utils/clickSound'
 
 export default {
   data() {
     return {
       isHeaderActive: false,
       headerLogo,
-      buttonSfx,
-      clickAudio: null,
     }
   },
   methods: {
+    playClickSound,
     handleScroll() {
       this.isHeaderActive = window.pageYOffset > 50
     },
-    playClickSound() {
-      console.log('HOVER', performance.now())
-      console.log(this.clickAudio)
-      console.log('READY STATE:', this.clickAudio.readyState)
 
-      this.clickAudio.currentTime = 0
-      this.clickAudio.play()
-    },
     handleAnchorClick(event) {
       event.preventDefault()
 
@@ -46,9 +38,6 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.handleScroll)
 
-    this.clickAudio = new Audio(this.buttonSfx)
-    this.clickAudio.load()
-
     const links = document.querySelectorAll('.header-link')
 
     links.forEach((link) => {
@@ -64,7 +53,6 @@ export default {
     links.forEach((link) => {
       link.removeEventListener('click', this.handleAnchorClick)
     })
-    this.clickAudio = null
   },
 }
 </script>
