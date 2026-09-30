@@ -1,5 +1,4 @@
 <script>
-// import FooterComponent from '../components/FooterComponent.vue'
 import { playClickSound } from '../utils/clickSound'
 import brushImg from '../assets/svg/brush-img.svg'
 import taskKey from '../assets/svg/task-key.svg'
@@ -17,11 +16,6 @@ import introImg from '../assets/images/img-intro5.png'
 import workImg from '../assets/images/img-intro5.png'
 
 export default {
-  // components: {
-  //   HeaderComponent,
-  //   FooterComponent,
-  // },
-
   data() {
     return {
       introImg,
@@ -174,7 +168,6 @@ export default {
       <div class="taskkey-wrapper">
         <h1 class="section-title taskkey-title">Your work, everywhere you are</h1>
         <img :src="taskKey" class="task-key-bg" />
-
         <img :src="brushImg" class="title-brush brush-taskkey" />
         <p class="taskkey-subtitle">
           Access your notes from your computer, phone or tablet by synchronising with various
@@ -227,6 +220,5 @@ export default {
     </section>
     <!-- TRUST END ------------------------------------------------------------>
   </main>
-
-  <!-- <FooterComponent /> -->
+  <FooterComponent />
 </template>
