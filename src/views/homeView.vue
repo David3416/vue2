@@ -2,6 +2,7 @@
 // import FooterComponent from '../components/FooterComponent.vue'
 import { playClickSound } from '../utils/clickSound'
 import brushImg from '../assets/svg/brush-img.svg'
+import taskKey from '../assets/svg/task-key.svg'
 
 import img1 from '../assets/images/img-intro1.png'
 import img2 from '../assets/images/img-intro2.png'
@@ -24,6 +25,7 @@ export default {
   data() {
     return {
       introImg,
+      taskKey,
       brushImg,
       workImg,
       right_arrow,
@@ -116,11 +118,73 @@ export default {
               also publish a note to the internet and share the URL with others.
             </p>
           </div>
-          <div class="plans"></div>
+          <div class="plans">
+            <div class="plan butt-radius">
+              <div class="plan-title">Free</div>
+              <div class="plan-price">$0</div>
+              <div class="plan-sub-title">Capture ideas and find them quickly</div>
+              <ul class="plan-list">
+                <li class="plan-feature">Sync unlimited devices</li>
+                <li class="plan-feature">10 GB monthly uploads</li>
+                <li class="plan-feature">200 MB max. note size</li>
+                <li class="plan-feature">Customize Home dashboard and access extra widgets</li>
+                <li class="plan-feature">Connect primary Google Calendar account</li>
+              </ul>
+              <div class="plan-butt butt-radius">Get Started</div>
+            </div>
+            <div class="plan butt-radius plan-center">
+              <div class="plan-title">Personal</div>
+              <div class="plan-price">$11.99</div>
+              <div class="plan-sub-title">Capture ideas and find them quickly</div>
+              <ul class="plan-list">
+                <li class="plan-feature plan-feature-center">Sync unlimited devices</li>
+                <li class="plan-feature plan-feature-center">10 GB monthly uploads</li>
+                <li class="plan-feature plan-feature-center">200 MB max. note size</li>
+                <li class="plan-feature plan-feature-center">
+                  Customize Home dashboard and access extra widgets
+                </li>
+                <li class="plan-feature plan-feature-center">
+                  Connect primary Google Calendar account
+                </li>
+              </ul>
+              <div class="butt-blue butt-radius">Get Started</div>
+            </div>
+            <div class="plan butt-radius">
+              <div class="plan-title">Organization</div>
+              <div class="plan-price">$49.99</div>
+              <div class="plan-sub-title">Capture ideas and find them quickly</div>
+              <ul class="plan-list">
+                <li class="plan-feature">Sync unlimited devices</li>
+                <li class="plan-feature">10 GB monthly uploads</li>
+                <li class="plan-feature">200 MB max. note size</li>
+                <li class="plan-feature">Customize Home dashboard and access extra widgets</li>
+                <li class="plan-feature">Connect primary Google Calendar account</li>
+              </ul>
+              <div class="plan-butt butt-radius">Get Started</div>
+            </div>
+            <!-- </div> -->
+          </div>
         </div>
       </div>
     </section>
     <!-- PLAN STAR ----------------------------------------------------------->
+
+    <!-- TASKKEY START ----------------------------------------------------->
+    <section class="taskkey-section">
+      <div class="taskkey-wrapper">
+        <h1 class="section-title taskkey-title">Your work, everywhere you are</h1>
+        <img :src="taskKey" class="task-key-bg" />
+
+        <img :src="brushImg" class="title-brush brush-taskkey" />
+        <p class="taskkey-subtitle">
+          Access your notes from your computer, phone or tablet by synchronising with various
+          services, including whitepace, Dropbox and OneDrive. The app is available on Windows,
+          macOS, Linux, Android and iOS. A terminal app is also available!
+        </p>
+        <a href="#!" class="butt-blue butt-radius task-key-butt">Try Taskey</a>
+      </div>
+    </section>
+    <!-- TASKKEY END ----------------------------------------------------->
 
     <!-- TRUST START ------------------------------------------------------------>
     <section class="trusted">
