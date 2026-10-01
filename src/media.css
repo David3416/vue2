@@ -1,0 +1,23 @@
+/* ===== Responsive ===== */
+
+@media (max-width: 1200px) {
+  .wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .header-wrapper {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    padding: 16px 0;
+  }
+
+  .butt-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 1040px) {
+  /* здесь будет новый вариант header */
+}

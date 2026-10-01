@@ -14,6 +14,7 @@ export default {
     playClickSound,
     handleScroll() {
       this.isHeaderActive = window.pageYOffset > 50
+      console.log('!!!')
     },
 
     handleAnchorClick(event) {
@@ -67,59 +68,59 @@ export default {
         <div class="butt-wrapper">
           <ul class="header-list">
             <li class="header-item">
-              <a href="#features" class="header-link" @mouseenter="playClickSound"> Features </a>
+              <a href="#features" class="header-link" @mouseenter="playClickSound"> Products </a>
               <ul class="header-items-drop-active">
                 <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> aaa </a>
+                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
                 </li>
                 <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> bbb </a>
+                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
                 </li>
                 <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ccc </a>
+                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
                 </li>
               </ul>
             </li>
 
             <li class="header-item">
-              <a href="#features" class="header-link" @mouseenter="playClickSound"> Features </a>
+              <a href="#features" class="header-link" @mouseenter="playClickSound"> Solutions </a>
               <ul class="header-items-drop-active">
                 <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> aaa </a>
+                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
                 </li>
                 <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> bbb </a>
+                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
                 </li>
                 <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ccc </a>
+                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
                 </li>
               </ul>
             </li>
             <li class="header-item">
-              <a href="#features" class="header-link" @mouseenter="playClickSound"> Features </a>
+              <a href="#features" class="header-link" @mouseenter="playClickSound"> Resources </a>
               <ul class="header-items-drop-active">
                 <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> aaa </a>
+                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
                 </li>
                 <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> bbb </a>
+                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
                 </li>
                 <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ccc </a>
+                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
                 </li>
               </ul>
             </li>
             <li class="header-item">
-              <a href="#features" class="header-link" @mouseenter="playClickSound"> Features </a>
+              <a href="#features" class="header-link" @mouseenter="playClickSound"> Pricing </a>
               <ul class="header-items-drop-active">
                 <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> aaa </a>
+                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
                 </li>
                 <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> bbb </a>
+                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
                 </li>
                 <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ccc </a>
+                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
                 </li>
               </ul>
             </li>

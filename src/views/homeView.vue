@@ -27,15 +27,35 @@ export default {
       currentSlide: 0,
       reviews: [
         {
-          name: 'Card 1',
+          name: 'Jessie Owner',
           image: img1,
           caption:
             '“If you haven’t tried whitepace yet, you need to give it a shot for your next event. It’s so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.”',
         },
-        { name: 'Card 2', image: img2 },
-        { name: 'Card 3', image: img3 },
-        { name: 'Card 4', image: img4 },
-        { name: 'Card 5', image: img5 },
+        {
+          name: 'Jessie Owner',
+          image: img2,
+          caption:
+            '“If you haven’t tried whitepace yet, you need to give it a shot for your next event. It’s so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.”',
+        },
+        {
+          name: 'Jessie Owner',
+          image: img3,
+          caption:
+            '“If you haven’t tried whitepace yet, you need to give it a shot for your next event. It’s so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.”',
+        },
+        {
+          name: 'Jessie Owner',
+          image: img4,
+          caption:
+            '“If you haven’t tried whitepace yet, you need to give it a shot for your next event. It’s so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.”',
+        },
+        {
+          name: 'Jessie Owner',
+          image: img5,
+          caption:
+            '“If you haven’t tried whitepace yet, you need to give it a shot for your next event. It’s so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.”',
+        },
       ],
     }
   },
