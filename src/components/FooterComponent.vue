@@ -18,7 +18,7 @@ export default {
           <!-- Brand -->
           <div class="footer-brand">
             <a href="#" class="footer-logo">
-              <img src="../assets/svg/footer-logo.svg" alt="Whitepace" />
+              <img :src="footerLogo" alt="Whitepace" />
               <span>whitepace</span>
             </a>
 
@@ -71,15 +71,17 @@ export default {
           </div>
         </div>
 
-        <!-- BOTTOM -->
+        <!-- BOTTOM △-->
 
         <div class="footer-bottom">
           <div class="footer-language-wrapper">
-            <div class="footer-language" @click="isLanguageOpen = !isLanguageOpen">🌐 English⌄</div>
+            <div class="footer-language" @click="isLanguageOpen = !isLanguageOpen">
+              🌐 English&nbsp;{{ isLanguageOpen ? '△' : '▽' }}
+            </div>
 
             <div class="dropdown-content" :class="{ 'dropdown-content--open': isLanguageOpen }">
-              <a href="#">English</a>
-              <a href="#">Русский</a>
+              <a href="#!">English</a>
+              <a href="#!">Русский</a>
             </div>
           </div>
 

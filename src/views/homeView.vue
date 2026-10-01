@@ -12,8 +12,8 @@ import img5 from '../assets/images/img-intro5.png'
 import right_arrow from '../assets/svg/right-arrow.svg'
 import left_arrow from '../assets/svg/left-arrow.svg'
 
-import introImg from '../assets/images/img-intro5.png'
-import workImg from '../assets/images/img-intro5.png'
+import introImg from '../assets/images/img-intro6.png'
+import workImg from '../assets/images/img-intro7.png'
 
 export default {
   data() {
@@ -192,10 +192,7 @@ export default {
         </div>
 
         <div class="slider">
-          <div
-            class="slider-track"
-            :style="{ transform: `translateX(-${currentSlide * 492 + currentSlide * 10}px)` }"
-          >
+          <div class="slider-track" :style="{ transform: `translateX(-${currentSlide * 504}px)` }">
             <div v-for="(review, index) in reviews" :key="index" class="card">
               <div class="card-img-wrapper">
                 <img :src="review.image" alt="" class="card-img" />
@@ -207,7 +204,7 @@ export default {
           </div>
 
           <div class="slider-butt-wrapper">
-            <button @click="prevSlide" class="slider-butt" @mouseclick="playClickSound">
+            <button @click="prevSlide" class="slider-butt">
               <img :src="left_arrow" class="arrow-style" />
             </button>
 

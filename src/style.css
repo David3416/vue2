@@ -281,7 +281,7 @@
   margin-bottom: 25px;
 }
 .plan-sub-title {
-  font-family: 18px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 23px;
   margin-bottom: 25px;
@@ -337,7 +337,6 @@
   height: 574px;
   background-color: var(--color-dark-blue);
   margin-bottom: 140px;
-  z-index: -10;
 }
 .taskkey-wrapper {
   position: relative;
@@ -372,7 +371,6 @@
 .taskkey-subtitle {
   position: absolute;
   top: 260px;
-  left: 0;
   max-width: 1064px;
   color: var(--color-white);
   left: 50%;
@@ -422,7 +420,6 @@
 .slider-track {
   display: flex;
   transition: transform 0.4s ease;
-  width: 2492px;
 }
 .card-img-wrapper {
   margin: 10px;
@@ -619,7 +616,9 @@
 }
 .footer-language {
   font-size: 16px;
+  cursor: pointer;
 }
+
 .footer-language-wrapper {
   position: relative;
   z-index: 10;
@@ -628,12 +627,11 @@
 
 .dropdown-content {
   position: absolute;
-  top: 50px;
-  left: 0;
-
+  top: 20px;
+  left: 20px;
   width: 102px;
 
-  background-color: var(--color-white);
+  background: none;
 
   opacity: 0;
   visibility: hidden;
@@ -654,7 +652,7 @@
   display: block;
   padding: 10px;
 
-  color: #000;
+  color: var(--color-white);
   text-decoration: none;
 }
 
