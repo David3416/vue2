@@ -1,4 +1,5 @@
 <script>
+import burgerIcon from '../assets/images/burger-icon.png'
 import headerLogo from '../assets/svg/header-logo.svg'
 import { smoothScroll } from '../utils/smoothScroll'
 import { playClickSound } from '../utils/clickSound'
@@ -6,8 +7,10 @@ import { playClickSound } from '../utils/clickSound'
 export default {
   data() {
     return {
+      burgerIcon,
       isHeaderActive: false,
       headerLogo,
+      isMenuOpen: false,
     }
   },
   methods: {
@@ -61,73 +64,83 @@ export default {
 <template>
   <header :class="{ 'header-active': isHeaderActive }" class="header">
     <div class="wrapper">
-      <div class="header-wrapper">
-        <RouterLink to="/" class="header-logo-link" @click="handleLogoClick">
-          <img :src="headerLogo" class="header-logo" alt="Whitepace" />
-        </RouterLink>
-        <div class="butt-wrapper">
-          <ul class="header-list">
-            <li class="header-item">
-              <a href="#features" class="header-link" @mouseenter="playClickSound"> Products </a>
-              <ul class="header-items-drop-active">
-                <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
-                </li>
-                <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
-                </li>
-                <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
-                </li>
-              </ul>
-            </li>
+      <div class="wrap">
+        <div class="header-wrapper">
+          <RouterLink to="/" class="header-logo-link" @click="handleLogoClick">
+            <img :src="headerLogo" class="header-logo" alt="Whitepace" />
+          </RouterLink>
+          <!--  header-nav-active это панель-->
+          <div class="header-nav" :class="{ 'header-nav-active': isMenuOpen }">
+            <ul class="header-list">
+              <li class="header-item">
+                <a href="#features" class="header-link" @mouseenter="playClickSound"> Products </a>
+                <ul class="header-items-drop-active">
+                  <li class="header-item-drop-active">
+                    <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
+                  </li>
+                  <li class="header-item-drop-active">
+                    <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
+                  </li>
+                  <li class="header-item-drop-active">
+                    <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
+                  </li>
+                </ul>
+              </li>
 
-            <li class="header-item">
-              <a href="#features" class="header-link" @mouseenter="playClickSound"> Solutions </a>
-              <ul class="header-items-drop-active">
-                <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
-                </li>
-                <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
-                </li>
-                <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
-                </li>
-              </ul>
-            </li>
-            <li class="header-item">
-              <a href="#features" class="header-link" @mouseenter="playClickSound"> Resources </a>
-              <ul class="header-items-drop-active">
-                <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
-                </li>
-                <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
-                </li>
-                <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
-                </li>
-              </ul>
-            </li>
-            <li class="header-item">
-              <a href="#features" class="header-link" @mouseenter="playClickSound"> Pricing </a>
-              <ul class="header-items-drop-active">
-                <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
-                </li>
-                <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
-                </li>
-                <li class="header-item-drop-active">
-                  <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+              <li class="header-item">
+                <a href="#features" class="header-link" @mouseenter="playClickSound"> Solutions </a>
+                <ul class="header-items-drop-active">
+                  <li class="header-item-drop-active">
+                    <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
+                  </li>
+                  <li class="header-item-drop-active">
+                    <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
+                  </li>
+                  <li class="header-item-drop-active">
+                    <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-item">
+                <a href="#features" class="header-link" @mouseenter="playClickSound"> Resources </a>
+                <ul class="header-items-drop-active">
+                  <li class="header-item-drop-active">
+                    <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
+                  </li>
+                  <li class="header-item-drop-active">
+                    <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
+                  </li>
+                  <li class="header-item-drop-active">
+                    <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-item">
+                <a href="#features" class="header-link" @mouseenter="playClickSound"> Pricing </a>
+                <ul class="header-items-drop-active">
+                  <li class="header-item-drop-active">
+                    <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
+                  </li>
+                  <li class="header-item-drop-active">
+                    <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
+                  </li>
+                  <li class="header-item-drop-active">
+                    <a href="" class="header-item-drop-link" @mouseenter="playClickSound"> ... </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
 
-          <RouterLink to="/login" class="butt-yellow butt-radius"> Login </RouterLink>
-          <RouterLink to="/try" class="butt-blue butt-radius"> Try Whitepace free </RouterLink>
+            <RouterLink to="/login" class="butt-yellow butt-radius" @click="isMenuOpen = false">
+              Login
+            </RouterLink>
+            <RouterLink to="/try" class="butt-blue butt-radius" @click="isMenuOpen = false">
+              Try Whitepace free
+            </RouterLink>
+          </div>
+        </div>
+        <div class="burger-menu">
+          <img @click="isMenuOpen = !isMenuOpen" :src="burgerIcon" alt="Menu" class="burger-icon" />
         </div>
       </div>
     </div>
