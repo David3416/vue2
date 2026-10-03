@@ -18,6 +18,7 @@
   height: 92px;
   transition: 0.3s;
   position: fixed;
+  /* background-color: aqua; */
 }
 .header-logo {
   margin-top: 7px;
@@ -29,6 +30,7 @@
 
 .wrapper {
   max-width: 1480px;
+  /* background-color: #17c952; */
   margin: 0 auto;
 }
 
@@ -36,6 +38,7 @@
   display: grid;
   grid-template-columns: 300px 1fr;
   max-width: 1480px;
+  /* background-color: #4f9cf9; */
   padding: 16px 0;
   position: relative;
 }
@@ -195,7 +198,9 @@
 }
 .intro-wrapper {
   display: grid;
-  grid-template-columns: 656px 824px;
+  grid-template-columns: 44.32% 55.68%;
+  grid-gap: 100px;
+  overflow: hidden;
 }
 .intro-title-wrapper {
   display: flex;
@@ -235,30 +240,39 @@
 
 .intro-foto-wrapper {
   max-width: 824px;
-  height: 549px;
-  overflow: hidden;
+  height: 550px;
 }
 
 .intro-foto {
-  display: block;
-  width: 100%;
-  height: 100%;
+  width: 824px;
+  height: 550px;
   object-fit: cover;
-  object-position: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 /* intro ends */
 
 /* WORK STARTS    ------------------------------------ */
 .work-wrapper {
   display: grid;
-  grid-template-columns: 710px 670px;
+  grid-template-columns: 51.45% 48.55%;
   grid-gap: 100px;
   height: 661px;
   margin-bottom: 140px;
 }
+.work-foto-wrapper {
+  max-width: 710px;
+  height: 661px;
+  overflow: hidden;
+}
 .work-img {
   width: 710px;
   height: 661px;
+  object-fit: cover;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 /*WORK ENDS    ----------------------------------------- */
 
@@ -310,7 +324,7 @@
   margin-bottom: 25px;
 }
 .plan-list {
-  width: 368px;
+  max-width: 368px;
 }
 .plan-feature::before {
   content: '';
@@ -357,65 +371,61 @@
 /* TASKKEY START--------------------------------- */
 .taskkey-section {
   width: 100%;
-  height: 574px;
+  min-height: 574px;
   background-color: var(--color-dark-blue);
   margin-bottom: 140px;
 }
+
 .taskkey-wrapper {
   position: relative;
-  width: 100%;
-  height: 100%;
+  min-height: 574px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  box-sizing: border-box;
 }
+
 .task-key-bg {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 0;
   transform: translateY(-187px);
   opacity: 0.3;
 }
-
-.taskkey-title {
-  color: var(--color-white);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 170px;
-  z-index: 100;
-}
-
 .brush-taskkey {
   position: absolute;
   top: 200px;
-  left: 1100px;
-  z-index: 8;
+  left: 50%;
+  transform: translateX(200px);
+  z-index: 0;
+}
+.taskkey-title {
+  color: var(--color-white);
+  margin-bottom: 40px;
 }
 
 .taskkey-subtitle {
-  position: absolute;
-  top: 260px;
   max-width: 1064px;
   color: var(--color-white);
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
   margin-bottom: 60px;
-  z-index: 20;
 }
+.taskkey-title,
+.taskkey-subtitle,
 .task-key-butt {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: inline-flex;
-  z-index: 10;
-  top: 360px;
-  color: var(--color-white);
+  position: relative;
+  z-index: 1;
 }
 .task-key-butt:hover {
   background-color: var(--color-white);
   color: var(--button-blue-hover);
 }
 /* TASKKEY ENDS--------------------------------- */
+
+/* LOGIN PAGE STARTS------------ */
 .login-page {
   height: 350px;
   width: 100%;
@@ -446,6 +456,8 @@
   font-size: 20px;
   margin-bottom: 30px;
 }
+/* LOGIN PAGE ENDS------------ */
+
 /* TRUST STARTS--------------------------------- */
 .trusted-title-wrapper {
   width: 100%;
@@ -457,7 +469,7 @@
   text-align: center;
   margin-bottom: 60px;
   font-size: 18px;
-  font-family: inter;
+  font-family: Inter;
   max-width: 979px;
 }
 .brush-trust {
@@ -467,7 +479,7 @@
 }
 .slider {
   overflow: hidden;
-  width: 1480px;
+  max-width: 1480px;
   /* background-color: #4f9cf9; */
 }
 .slider-track {
@@ -478,7 +490,7 @@
   margin: 10px;
   box-sizing: border-box;
   height: 480px;
-  width: 472px;
+  max-width: 472px;
   overflow: hidden;
   display: block;
   box-shadow: -5px 5px 9px rgba(100, 100, 100, 0.5);
@@ -496,7 +508,7 @@
   min-width: 472px;
 }
 .card-img {
-  width: 70px;
+  max-width: 70px;
   height: 70px;
   border-radius: 50%;
   object-fit: cover;

@@ -104,7 +104,9 @@ export default {
     <section class="work">
       <div class="wrapper">
         <div class="work-wrapper">
-          <img :src="workImg" class="work-img" />
+          <div class="work-foto-wrapper">
+            <img :src="workImg" class="work-img" />
+          </div>
           <div class="intro-title-wrapper">
             <h1 class="section-title">Work together</h1>
             <img :src="brushImg" class="title-brush brush-work" />

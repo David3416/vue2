@@ -1,11 +1,18 @@
 /* FOOTER ENDS   ---------------------------- */
 /* ===== Responsive ===== */
-
-@media (max-width: 1200px) {
+@media (max-width: 1515px) {
   .wrapper {
     padding-left: 20px;
     padding-right: 20px;
   }
+  .work-wrapper {
+    grid-gap: 30px;
+  }
+  .intro-wrapper {
+    grid-gap: 30px;
+  }
+}
+@media (max-width: 1200px) {
   .header-list {
     margin-right: auto;
   }
