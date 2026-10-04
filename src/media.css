@@ -1,4 +1,3 @@
-/* FOOTER ENDS   ---------------------------- */
 /* ===== Responsive ===== */
 @media (max-width: 1515px) {
   .wrapper {
@@ -11,6 +10,21 @@
   .intro-wrapper {
     grid-gap: 30px;
   }
+  .intro-subtitle {
+    max-width: 500px;
+  }
+  .header-wrapper {
+    display: grid;
+    grid-template-columns: 180px 2fr;
+  }
+  .plan {
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: 400;
+  }
+  /* .plan {
+    height: 470px;
+  } */
 }
 @media (max-width: 1200px) {
   .header-list {
@@ -18,6 +32,23 @@
   }
   .header-wrapper {
     grid-template-columns: 150px 1fr;
+  }
+  .brush-work {
+    top: 240px;
+    left: 90px;
+  }
+  .brush-plan {
+    left: 530px;
+  }
+  .header-wrapper {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+  }
+  .plan {
+    padding: 44px;
+    border: 1px solid var(--button-yellow);
+    margin-top: 60px;
+    /* padding-bottom: 0px; */
   }
 }
 @media (max-width: 1040px) {
@@ -140,11 +171,70 @@
     padding: 35px 92px;
     margin-bottom: 30px;
   }
-  .butt-blue {
-    display: inline-flex;
-    align-self: flex-start;
-    padding: 35px 49px;
+  /* header end */
+  /*
+ */
+  /* INTRO STARTS -------------*/
+  .brush-plan {
+    left: 460px;
+  }
+  .brush-intro {
+    top: 15%;
+    left: 530px;
+  }
+  .intro-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .section-title {
+    font-size: 90px;
+  }
+  .intro-subtitle {
+    font-size: 30px;
+    max-width: 800px;
+  }
+  .intro-foto-wrapper {
+    width: 100%;
+    max-width: none;
   }
 
-  /* HEADER ITEMS END----------------*/
+  .intro-foto {
+    width: 100%;
+  }
+  .title-brush {
+    font-size: 90px;
+  }
+  /* INTRO ENDS -------------*/
+
+  /* WORK STARTS    ------------------------------------ */
+  .work-wrapper {
+    grid-template-columns: 1fr;
+    margin-bottom: 450px;
+  }
+  .work-title-wrapper {
+    order: -1;
+  }
+  .brush-work {
+    top: 50px;
+    left: 300px;
+  }
+  /* WORK ENDS    ------------------------------------ */
+  /* plan starts ---------- */
+  .brush-plan {
+    top: 50px;
+  }
+  .plan-subtitle {
+    font-size: 30px;
+  }
+  /* plan ends ---------- */
+  /* task starts */
+  .taskkey-subtitle {
+    font-size: 30px;
+  }
+  .brush-taskkey {
+    top: 140px;
+    left: 250px;
+  }
+  /* task ends */
+}
+@media (max-width: 900px) {
 }

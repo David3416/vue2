@@ -83,7 +83,7 @@ export default {
       <div class="wrapper">
         <div class="intro-wrapper">
           <div class="intro-title-wrapper">
-            <h1 class="section-title">Get More Done with whitepace!!!!!!</h1>
+            <h1 class="section-title">Get More Done with whitepace</h1>
             <img :src="brushImg" class="title-brush brush-intro" />
             <p class="intro-subtitle">
               Project management software that enables your teams to collaborate, plan, analyze and
@@ -107,7 +107,7 @@ export default {
           <div class="work-foto-wrapper">
             <img :src="workImg" class="work-img" />
           </div>
-          <div class="intro-title-wrapper">
+          <div class="work-title-wrapper">
             <h1 class="section-title">Work together</h1>
             <img :src="brushImg" class="title-brush brush-work" />
             <p class="intro-subtitle">
@@ -185,7 +185,7 @@ export default {
     </section>
     <!-- PLAN STAR ----------------------------------------------------------->
 
-    <!-- TASKKEY START ----------------------------------------------------->
+    <!--   START ----------------------------------------------------->
     <section class="taskkey-section">
       <div class="taskkey-wrapper">
         <h1 class="section-title taskkey-title">Your work, everywhere you are</h1>

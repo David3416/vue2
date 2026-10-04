@@ -151,10 +151,13 @@
 
 .butt-yellow {
   padding: 18px 40px;
-  display: flex;
-  align-items: center;
+  display: block;
+  height: 22px;
   margin-right: 25px;
-  justify-content: center;
+  /*display: flex;
+  align-items: center;
+
+  justify-content: center;*/
   text-decoration: none;
   background-color: var(--button-yellow);
   color: var(--color-dark-blue);
@@ -167,9 +170,8 @@
 }
 
 .butt-blue {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
+  height: 22px;
+  width: 240px;
   padding: 18px 34px;
   text-decoration: none;
   background-color: var(--button-blue);
@@ -241,6 +243,7 @@
 .intro-foto-wrapper {
   max-width: 824px;
   height: 550px;
+  overflow: hidden;
 }
 
 .intro-foto {
@@ -262,17 +265,23 @@
   margin-bottom: 140px;
 }
 .work-foto-wrapper {
-  max-width: 710px;
+  width: 100%;
   height: 661px;
   overflow: hidden;
 }
+
 .work-img {
-  width: 710px;
-  height: 661px;
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+}
+.work-title-wrapper {
+  display: flex;
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 /*WORK ENDS    ----------------------------------------- */
 
@@ -299,11 +308,15 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 32px;
+  align-items: start;
 }
 .plan {
+  display: block;
   padding: 44px;
   border: 1px solid var(--button-yellow);
   margin-top: 60px;
+  min-width: 0;
+  /* min-height: 470px; */
 }
 .plan-title {
   font-size: 24px;
@@ -339,25 +352,26 @@
 .plan-feature {
   margin-bottom: 28px;
   display: flex;
-  flex-wrap: wrap;
   gap: 8px;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
+  align-items: center;
 }
 .plan-center {
   border: none;
   box-shadow: 0 4px 10px rgba(100, 100, 100, 0.5);
   margin-top: 0;
   padding-top: 80px;
+  /* min-height: 550px; */
 }
 .plan-feature-center {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 23px;
   font-weight: 400;
 }
 .plan-butt {
-  padding: 18px 34px;
+  /* padding: 18px 34px; */
   border: 1px solid var(--button-yellow);
 }
 .plan-butt:hover,
@@ -523,15 +537,13 @@
 .revue-name {
   margin-bottom: 50px;
 }
-/* .slider-header-nav {
-  width: 100%;
-  height: 100px;
+.slider-butt-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
-} */
+}
+
 .slider-butt {
+  display: block;
   border: none;
   background: none;
 }
@@ -543,7 +555,13 @@
   scale: 107%;
 }
 /* TRUST ENDS--------------------------------- */
-
+/*  */
+/*  */
+/*  */
+/*  */ /*  */
+/*  */ /*  */
+/*  */ /*  */
+/*  */
 /* FOOTER STARTS   ---------------------------- */
 
 .footer {
@@ -754,3 +772,4 @@
   color: var(--color-white);
   text-decoration: none;
 }
+/* FOOTER ENDS   ---------------------------- */
