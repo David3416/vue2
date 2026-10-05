@@ -148,16 +148,15 @@
 .header-link:hover {
   color: var(--color-white);
 }
-
+/* BUTTONS START---------------- */
 .butt-yellow {
   padding: 18px 40px;
   display: block;
-  height: 22px;
+  height: 18px;
   margin-right: 25px;
-  /*display: flex;
   align-items: center;
 
-  justify-content: center;*/
+  justify-content: center;
   text-decoration: none;
   background-color: var(--button-yellow);
   color: var(--color-dark-blue);
@@ -170,11 +169,16 @@
 }
 
 .butt-blue {
-  height: 22px;
-  width: 240px;
+  height: 18px;
+  color: var(--color-dark-blue);
   padding: 18px 34px;
+  display: flex;
+  flex-wrap: nowrap;
   text-decoration: none;
   background-color: var(--button-blue);
+}
+.butt-blue-header {
+  width: 220px;
 }
 .butt-blue:hover {
   background-color: var(--button-blue-hover);
@@ -184,7 +188,22 @@
   border-radius: 7px;
   display: inline-block;
 }
+.plan-butt {
+  padding: 18px 34px;
+  height: 18px;
+  border: 1px solid var(--button-yellow);
+}
+.plan-butt:hover,
+.plan-butt:active,
+.plan-butt:focus {
+  border: 1px solid var(--button-yellow-hover);
+  background-color: var(--button-yellow);
+}
+
+/* BUTTONS END---------------- */
+
 /* header ends */
+
 /* BURGER START---------------- */
 .burger-icon {
   display: none;
@@ -306,7 +325,7 @@
 }
 .plans {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-gap: 32px;
   align-items: start;
 }
@@ -361,8 +380,10 @@
 .plan-center {
   border: none;
   box-shadow: 0 4px 10px rgba(100, 100, 100, 0.5);
-  margin-top: 0;
+  transform: translateY(-60px);
   padding-top: 80px;
+  padding-bottom: 80px;
+  min-height: 530px;
   /* min-height: 550px; */
 }
 .plan-feature-center {
@@ -370,16 +391,7 @@
   line-height: 23px;
   font-weight: 400;
 }
-.plan-butt {
-  /* padding: 18px 34px; */
-  border: 1px solid var(--button-yellow);
-}
-.plan-butt:hover,
-.plan-butt:active,
-.plan-butt:focus {
-  border: 1px solid var(--button-yellow-hover);
-  background-color: var(--button-yellow);
-}
+
 /* PLAN ENDS--------------------------------- */
 
 /* TASKKEY START--------------------------------- */

@@ -134,7 +134,11 @@ export default {
             <RouterLink to="/login" class="butt-yellow butt-radius" @click="isMenuOpen = false">
               Login
             </RouterLink>
-            <RouterLink to="/try" class="butt-blue butt-radius" @click="isMenuOpen = false">
+            <RouterLink
+              to="/try"
+              class="butt-blue butt-radius butt-blue-header"
+              @click="isMenuOpen = false"
+            >
               Try Whitepace free
             </RouterLink>
           </div>
