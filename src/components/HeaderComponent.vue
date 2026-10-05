@@ -131,7 +131,11 @@ export default {
               </li>
             </ul>
 
-            <RouterLink to="/login" class="butt-yellow butt-radius" @click="isMenuOpen = false">
+            <RouterLink
+              to="/login"
+              class="butt-yellow-header butt-radius"
+              @click="isMenuOpen = false"
+            >
               Login
             </RouterLink>
             <RouterLink

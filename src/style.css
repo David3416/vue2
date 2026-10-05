@@ -36,7 +36,7 @@
 
 .header-wrapper {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 200px 1fr;
   max-width: 1480px;
   /* background-color: #4f9cf9; */
   padding: 16px 0;
@@ -149,6 +149,18 @@
   color: var(--color-white);
 }
 /* BUTTONS START---------------- */
+.butt-yellow-header {
+  padding: 18px 40px;
+  display: block;
+  height: 18px;
+  margin-right: 25px;
+  align-items: center;
+
+  justify-content: center;
+  text-decoration: none;
+  background-color: var(--button-yellow);
+  color: var(--color-dark-blue);
+}
 .butt-yellow {
   padding: 18px 40px;
   display: block;
@@ -167,7 +179,12 @@
   background-color: var(--button-yellow-hover);
   color: var(--color-white);
 }
-
+.butt-yellow-header:hover,
+.butt-yellow-header:active,
+.butt-yellow-header:focus {
+  background-color: var(--button-yellow-hover);
+  color: var(--color-white);
+}
 .butt-blue {
   height: 18px;
   color: var(--color-dark-blue);
@@ -176,6 +193,7 @@
   flex-wrap: nowrap;
   text-decoration: none;
   background-color: var(--button-blue);
+  justify-content: center;
 }
 .butt-blue-header {
   width: 220px;
@@ -570,7 +588,7 @@
 /*  */
 /*  */
 /*  */
-/*  */ /*  */
+/*  */
 /*  */ /*  */
 /*  */ /*  */
 /*  */

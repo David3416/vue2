@@ -18,6 +18,7 @@ import workImg from '../assets/images/img-intro7.png'
 export default {
   data() {
     return {
+      sliderWidth: 0,
       introImg,
       taskKey,
       brushImg,
@@ -25,6 +26,7 @@ export default {
       right_arrow,
       left_arrow,
       currentSlide: 0,
+      isMobile: false,
       reviews: [
         {
           name: 'Jessie Owner',
@@ -71,6 +73,19 @@ export default {
         this.currentSlide--
       }
     },
+    updateSliderWidth() {
+      this.sliderWidth = this.$refs.slider.offsetWidth
+      this.isMobile = window.innerWidth <= 900
+    },
+  },
+  mounted() {
+    this.updateSliderWidth()
+    window.addEventListener('resize', this.updateSliderWidth)
+    console.log('&&&' + this.sliderWidth)
+  },
+
+  beforeUnmount() {
+    window.removeEventListener('resize', this.updateSliderWidth)
   },
 }
 </script>
@@ -213,8 +228,13 @@ export default {
           </p>
         </div>
 
-        <div class="slider">
-          <div class="slider-track" :style="{ transform: `translateX(-${currentSlide * 504}px)` }">
+        <div ref="slider" class="slider">
+          <div
+            class="slider-track"
+            :style="{
+              transform: `translateX(-${currentSlide * (isMobile ? sliderWidth : 504)}px)`,
+            }"
+          >
             <div v-for="(review, index) in reviews" :key="index" class="card">
               <div class="card-img-wrapper">
                 <img :src="review.image" alt="" class="card-img" />
