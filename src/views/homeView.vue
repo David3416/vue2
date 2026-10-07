@@ -5,11 +5,11 @@ import brushImg from '../assets/svg/brush-img.svg'
 import taskKey from '../assets/svg/task-key.svg'
 import avatar from '../assets/images/avatar.png'
 
-import img1 from '../assets/images/img-intro1.png'
-import img2 from '../assets/images/img-intro2.png'
-import img3 from '../assets/images/img-intro3.png'
-import img4 from '../assets/images/img-intro4.png'
-import img5 from '../assets/images/img-intro5.png'
+// import img1 from '../assets/images/img-intro1.png'
+// import img2 from '../assets/images/img-intro2.png'
+// import img3 from '../assets/images/img-intro3.png'
+// import img4 from '../assets/images/img-intro4.png'
+// import img5 from '../assets/images/img-intro5.png'
 
 import right_arrow from '../assets/svg/right-arrow.svg'
 import left_arrow from '../assets/svg/left-arrow.svg'
@@ -20,6 +20,8 @@ import workImg from '../assets/images/img-intro7.png'
 export default {
   data() {
     return {
+      user: null,
+      commentText: '',
       avatar,
 
       users: [],
@@ -37,46 +39,69 @@ export default {
       currentSlide: 0,
       isMobile: false,
 
-      reviews: [
-        {
-          name: 'Jessie Owner',
-          image: img1,
-          caption:
-            '“If you haven’t tried whitepace yet, you need to give it a shot for your next event. It’s so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.”',
-        },
-
-        {
-          name: 'Jessie Owner',
-          image: img2,
-          caption:
-            '“If you haven’t tried whitepace yet, you need to give it a shot for your next event. It’s so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.”',
-        },
-
-        {
-          name: 'Jessie Owner',
-          image: img3,
-          caption:
-            '“If you haven’t tried whitepace yet, you need to give it a shot for your next event. It’s so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.”',
-        },
-
-        {
-          name: 'Jessie Owner',
-          image: img4,
-          caption:
-            '“If you haven’t tried whitepace yet, you need to give it a shot for your next event. It’s so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.”',
-        },
-
-        {
-          name: 'Jessie Owner',
-          image: img5,
-          caption:
-            '“If you haven’t tried whitepace yet, you need to give it a shot for your next event. It’s so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.”',
-        },
-      ],
+      reviews: [],
     }
   },
 
   methods: {
+    addComment() {
+      if (!this.commentText.trim()) {
+        return
+      }
+
+      fetch('http://localhost:3000/api/comments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          user_id: this.user.id,
+          text: this.commentText,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data)
+
+          this.reviews.push({
+            id: data.id,
+            text: data.text,
+            name: this.user.name,
+            avatar: this.user.avatar,
+            likes: 0,
+            dislikes: 0,
+          })
+
+          this.commentText = ''
+        })
+    },
+    likeComment(id) {
+      fetch(`http://localhost:3000/api/comments/${id}/like`, {
+        method: 'POST',
+      })
+        .then((response) => response.json())
+        .then(() => {
+          const review = this.reviews.find((review) => review.id === id)
+
+          if (review) {
+            review.likes++
+          }
+        })
+    },
+
+    dislikeComment(id) {
+      fetch(`http://localhost:3000/api/comments/${id}/dislike`, {
+        method: 'POST',
+      })
+        .then((response) => response.json())
+        .then(() => {
+          const review = this.reviews.find((review) => review.id === id)
+
+          if (review) {
+            review.dislikes++
+          }
+        })
+    },
     playClickSound,
 
     nextSlide() {
@@ -98,6 +123,17 @@ export default {
   },
 
   mounted() {
+    const savedUser = localStorage.getItem('user')
+
+    if (savedUser) {
+      this.user = JSON.parse(savedUser)
+    }
+    fetch('http://localhost:3000/api/comments')
+      .then((response) => response.json())
+      .then((data) => {
+        this.reviews = data
+        console.log(this.reviews)
+      })
     this.updateSliderWidth()
 
     window.addEventListener('resize', this.updateSliderWidth)
@@ -260,11 +296,18 @@ export default {
             }"
           >
             <div v-for="(review, index) in reviews" :key="index" class="card">
-              <div class="card-img-wrapper">
-                <img :src="review.image" alt="" class="card-img" />
+              <img
+                :src="`http://localhost:3000/uploads/${review.avatar}`"
+                alt=""
+                class="card-img"
+              />
 
-                <p class="revue-caption">{{ review.caption }}</p>
-                <p class="revue-name">{{ review.name }}</p>
+              <p class="revue-caption">{{ review.text }}</p>
+              <p class="revue-name">{{ review.name }}</p>
+              <div class="review-actions">
+                <button @click="likeComment(review.id)">👍 {{ review.likes }}</button>
+
+                <button @click="dislikeComment(review.id)">👎 {{ review.dislikes }}</button>
               </div>
             </div>
           </div>
@@ -278,6 +321,17 @@ export default {
               <img :src="right_arrow" class="arrow-style" />
             </button>
           </div>
+        </div>
+        <div class="comment-form">
+          <template v-if="user">
+            <h3>Leave a comment</h3>
+
+            <textarea v-model="commentText" placeholder="Write your comment..."></textarea>
+
+            <button @click="addComment" class="butt-blue butt-radius">Leave comment</button>
+          </template>
+
+          <p v-else>Войдите или зарегистрируйтесь, чтобы оставить комментарий.</p>
         </div>
       </div>
     </section>
