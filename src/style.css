@@ -11,7 +11,10 @@
   --button-blue: #4f9cf9;
   --button-blue-hover: #295c9b;
 }
-
+.j-son {
+  margin-top: 100px;
+  display: block;
+}
 .header {
   top: 0;
   width: 100%;
@@ -470,7 +473,8 @@
 /* TASKKEY ENDS--------------------------------- */
 
 /* LOGIN PAGE STARTS------------ */
-.login-page {
+.login-view {
+  margin-bottom: 100px;
   height: 350px;
   width: 100%;
   margin: 0 auto;
@@ -481,11 +485,10 @@
   justify-content: center;
 }
 
-.login-page-title {
+.login-view-title {
   font-size: 20px;
-  margin-bottom: 30px;
 }
-.try-page {
+.register-page {
   height: 350px;
   width: 100%;
   margin: 0 auto;
@@ -496,7 +499,7 @@
   justify-content: center;
 }
 
-.try-page-title {
+.register-page-title {
   font-size: 20px;
   margin-bottom: 30px;
 }

@@ -11,9 +11,14 @@ export default {
       isHeaderActive: false,
       headerLogo,
       isMenuOpen: false,
+      user: null,
     }
   },
   methods: {
+    logout() {
+      localStorage.removeItem('user')
+      this.user = null
+    },
     playClickSound,
     handleScroll() {
       this.isHeaderActive = window.pageYOffset > 50
@@ -41,6 +46,12 @@ export default {
 
   mounted() {
     window.addEventListener('scroll', this.handleScroll)
+
+    const savedUser = localStorage.getItem('user')
+
+    if (savedUser) {
+      this.user = JSON.parse(savedUser)
+    }
 
     const links = document.querySelectorAll('.header-link')
 
@@ -131,20 +142,21 @@ export default {
               </li>
             </ul>
 
-            <RouterLink
-              to="/login"
-              class="butt-yellow-header butt-radius"
-              @click="isMenuOpen = false"
-            >
-              Login
-            </RouterLink>
-            <RouterLink
-              to="/try"
-              class="butt-blue butt-radius butt-blue-header"
-              @click="isMenuOpen = false"
-            >
-              Try Whitepace free
-            </RouterLink>
+            <template v-if="user">
+              <span>{{ user.name }}</span>
+
+              <button class="butt-yellow butt-radius" @click="logout">Logout</button>
+            </template>
+
+            <template v-else>
+              <RouterLink to="/login" class="butt-yellow butt-radius" @click="isMenuOpen = false">
+                Login
+              </RouterLink>
+
+              <RouterLink to="/register" class="butt-blue butt-radius" @click="isMenuOpen = false">
+                Register
+              </RouterLink>
+            </template>
           </div>
         </div>
         <div class="burger-menu">

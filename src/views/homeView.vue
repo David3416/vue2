@@ -1,7 +1,9 @@
 <script>
 import { playClickSound } from '../utils/clickSound'
+
 import brushImg from '../assets/svg/brush-img.svg'
 import taskKey from '../assets/svg/task-key.svg'
+import avatar from '../assets/images/avatar.png'
 
 import img1 from '../assets/images/img-intro1.png'
 import img2 from '../assets/images/img-intro2.png'
@@ -18,15 +20,23 @@ import workImg from '../assets/images/img-intro7.png'
 export default {
   data() {
     return {
+      avatar,
+
+      users: [],
+
       sliderWidth: 0,
+
       introImg,
       taskKey,
       brushImg,
       workImg,
+
       right_arrow,
       left_arrow,
+
       currentSlide: 0,
       isMobile: false,
+
       reviews: [
         {
           name: 'Jessie Owner',
@@ -34,24 +44,28 @@ export default {
           caption:
             '“If you haven’t tried whitepace yet, you need to give it a shot for your next event. It’s so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.”',
         },
+
         {
           name: 'Jessie Owner',
           image: img2,
           caption:
             '“If you haven’t tried whitepace yet, you need to give it a shot for your next event. It’s so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.”',
         },
+
         {
           name: 'Jessie Owner',
           image: img3,
           caption:
             '“If you haven’t tried whitepace yet, you need to give it a shot for your next event. It’s so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.”',
         },
+
         {
           name: 'Jessie Owner',
           image: img4,
           caption:
             '“If you haven’t tried whitepace yet, you need to give it a shot for your next event. It’s so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.”',
         },
+
         {
           name: 'Jessie Owner',
           image: img5,
@@ -61,27 +75,32 @@ export default {
       ],
     }
   },
+
   methods: {
     playClickSound,
+
     nextSlide() {
       if (this.currentSlide < this.reviews.length - 3) {
         this.currentSlide++
       }
     },
+
     prevSlide() {
       if (this.currentSlide > 0) {
         this.currentSlide--
       }
     },
+
     updateSliderWidth() {
       this.sliderWidth = this.$refs.slider.offsetWidth
       this.isMobile = window.innerWidth <= 900
     },
   },
+
   mounted() {
     this.updateSliderWidth()
+
     window.addEventListener('resize', this.updateSliderWidth)
-    console.log('&&&' + this.sliderWidth)
   },
 
   beforeUnmount() {
@@ -91,9 +110,14 @@ export default {
 </script>
 
 <template>
+  <div v-for="user in users" :key="user.id" class="j-son">
+    <p>{{ user.name }}</p>
+    <p>{{ user.email }}</p>
+  </div>
   <!-- <HeaderComponent /> -->
   <main class="main">
     <!-- intro starts -->
+
     <section class="intro">
       <div class="wrapper">
         <div class="intro-wrapper">
@@ -259,5 +283,5 @@ export default {
     </section>
     <!-- TRUST END ------------------------------------------------------------>
   </main>
-  <FooterComponent />
+  <!-- <FooterComponent /> -->
 </template>
