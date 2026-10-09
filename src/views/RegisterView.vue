@@ -25,11 +25,11 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           console.log(data)
+          this.$router.push('/login')
         })
     },
     handleAvatar(event) {
       this.avatar = event.target.files[0]
-      console.log(this.avatar)
     },
   },
 }

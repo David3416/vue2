@@ -22,13 +22,14 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           if (data.error) {
-            console.log(data.error)
             return
           }
 
-          localStorage.setItem('user', JSON.stringify(data))
+          localStorage.setItem('user', JSON.stringify(data.user))
+          localStorage.setItem('token', data.token)
+          console.log('User logged in:', data.user)
 
-          console.log('User logged in:', data)
+          this.$router.push('/')
         })
     },
   },
@@ -57,11 +58,11 @@ export default {
     </div>
   </div>
 
-  <div class="login-view">
+  <!-- <div class="login-view">
     <h1 class="login-view-title">Login page</h1>
 
     <div class="butt-yellow butt-radius login-return">
       <RouterLink to="/"> back </RouterLink>
     </div>
-  </div>
+  </div> -->
 </template>

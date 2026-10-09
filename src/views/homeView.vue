@@ -3,13 +3,7 @@ import { playClickSound } from '../utils/clickSound'
 
 import brushImg from '../assets/svg/brush-img.svg'
 import taskKey from '../assets/svg/task-key.svg'
-import avatar from '../assets/images/avatar.png'
-
-// import img1 from '../assets/images/img-intro1.png'
-// import img2 from '../assets/images/img-intro2.png'
-// import img3 from '../assets/images/img-intro3.png'
-// import img4 from '../assets/images/img-intro4.png'
-// import img5 from '../assets/images/img-intro5.png'
+import avatar from '../assets/images/default-avatar.png'
 
 import right_arrow from '../assets/svg/right-arrow.svg'
 import left_arrow from '../assets/svg/left-arrow.svg'
@@ -61,8 +55,6 @@ export default {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log(data)
-
           this.reviews.push({
             id: data.id,
             text: data.text,
@@ -78,28 +70,54 @@ export default {
     likeComment(id) {
       fetch(`http://localhost:3000/api/comments/${id}/like`, {
         method: 'POST',
+        credentials: 'include',
       })
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) {
+            return response.json().then((data) => {
+              throw new Error(data.error)
+            })
+          }
+
+          return response.json()
+        })
         .then(() => {
           const review = this.reviews.find((review) => review.id === id)
 
           if (review) {
             review.likes++
+            review.dislikes = Math.max(0, review.dislikes - 1)
           }
+        })
+        .catch((error) => {
+          console.log(error.message)
         })
     },
 
     dislikeComment(id) {
       fetch(`http://localhost:3000/api/comments/${id}/dislike`, {
         method: 'POST',
+        credentials: 'include',
       })
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) {
+            return response.json().then((data) => {
+              throw new Error(data.error)
+            })
+          }
+
+          return response.json()
+        })
         .then(() => {
           const review = this.reviews.find((review) => review.id === id)
 
           if (review) {
             review.dislikes++
+            review.likes = Math.max(0, review.likes - 1)
           }
+        })
+        .catch((error) => {
+          console.log(error.message)
         })
     },
     playClickSound,
@@ -132,7 +150,6 @@ export default {
       .then((response) => response.json())
       .then((data) => {
         this.reviews = data
-        console.log(this.reviews)
       })
     this.updateSliderWidth()
 
@@ -158,7 +175,7 @@ export default {
       <div class="wrapper">
         <div class="intro-wrapper">
           <div class="intro-title-wrapper">
-            <h1 class="section-title">Get More Done with whitepace</h1>
+            <h1 class="section-title">Lorem ipsum</h1>
             <img :src="brushImg" class="title-brush brush-intro" />
             <p class="intro-subtitle">
               Project management software that enables your teams to collaborate, plan, analyze and
@@ -183,7 +200,7 @@ export default {
             <img :src="workImg" class="work-img" />
           </div>
           <div class="work-title-wrapper">
-            <h1 class="section-title">Work together</h1>
+            <h1 class="section-title">Lorem ipsum</h1>
             <img :src="brushImg" class="title-brush brush-work" />
             <p class="intro-subtitle">
               With whitepace, share your notes with your colleagues and collaborate on them. You can
@@ -202,7 +219,7 @@ export default {
       <div class="wrapper">
         <div class="plan-wrapper">
           <div class="plan-title-wrapper">
-            <h1 class="section-title">Choose Your Plan</h1>
+            <h1 class="section-title">Lorem ipsum</h1>
             <img :src="brushImg" class="title-brush brush-plan" />
             <p class="plan-subtitle">
               With whitepace, share your notes with your colleagues and collaborate on them. You can
@@ -224,7 +241,7 @@ export default {
               <div class="plan-butt butt-radius">Get Started</div>
             </div>
             <div class="plan butt-radius plan-center">
-              <div class="plan-title">Personal</div>
+              <div class="plan-title">Lorem ipsum</div>
               <div class="plan-price">$11.99</div>
               <div class="plan-sub-title">Capture ideas and find them quickly</div>
               <ul class="plan-list">
@@ -263,7 +280,7 @@ export default {
     <!--   START ----------------------------------------------------->
     <section class="taskkey-section">
       <div class="taskkey-wrapper">
-        <h1 class="section-title taskkey-title">Your work, everywhere you are</h1>
+        <h1 class="section-title taskkey-title">Lorem ipsum</h1>
         <img :src="taskKey" class="task-key-bg" />
         <img :src="brushImg" class="title-brush brush-taskkey" />
         <p class="taskkey-subtitle">
@@ -280,7 +297,7 @@ export default {
     <section class="trusted">
       <div class="wrapper">
         <div class="trusted-title-wrapper">
-          <h1 class="section-title">See what our trusted users Say</h1>
+          <h1 class="section-title">Lorem ipsum</h1>
           <img :src="brushImg" class="title-brush brush-trust" />
           <p class="trusted-subtitle">
             Whether you want to get organized, keep your personal life on track, or boost workplace
@@ -297,9 +314,9 @@ export default {
           >
             <div v-for="(review, index) in reviews" :key="index" class="card">
               <img
-                :src="`http://localhost:3000/uploads/${review.avatar}`"
-                alt=""
-                class="card-img"
+                :src="review.avatar ? `http://localhost:3000/uploads/${review.avatar}` : avatar"
+                alt="Avatar"
+                class="avatar"
               />
 
               <p class="revue-caption">{{ review.text }}</p>

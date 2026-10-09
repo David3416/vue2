@@ -1,6 +1,6 @@
 <script>
 import burgerIcon from '../assets/images/burger-icon.png'
-import headerLogo from '../assets/svg/header-logo.svg'
+import headerLogo from '../assets/images/pris-header-logo.png'
 import { smoothScroll } from '../utils/smoothScroll'
 import { playClickSound } from '../utils/clickSound'
 
@@ -14,15 +14,29 @@ export default {
       user: null,
     }
   },
+  watch: {
+    $route() {
+      this.loadUser()
+    },
+  },
   methods: {
+    loadUser() {
+      const savedUser = localStorage.getItem('user')
+
+      if (savedUser) {
+        this.user = JSON.parse(savedUser)
+      } else {
+        this.user = null
+      }
+    },
     logout() {
       localStorage.removeItem('user')
+      localStorage.removeItem('token')
       this.user = null
     },
     playClickSound,
     handleScroll() {
       this.isHeaderActive = window.pageYOffset > 50
-      console.log('!!!')
     },
 
     handleAnchorClick(event) {
@@ -45,6 +59,7 @@ export default {
   },
 
   mounted() {
+    this.loadUser()
     window.addEventListener('scroll', this.handleScroll)
 
     const savedUser = localStorage.getItem('user')
@@ -146,6 +161,7 @@ export default {
               <span>{{ user.name }}</span>
 
               <button class="butt-yellow butt-radius" @click="logout">Logout</button>
+              <RouterLink v-if="user && user.role === 'admin'" to="/admin"> Admin </RouterLink>
             </template>
 
             <template v-else>
@@ -153,14 +169,23 @@ export default {
                 Login
               </RouterLink>
 
-              <RouterLink to="/register" class="butt-blue butt-radius" @click="isMenuOpen = false">
+              <RouterLink
+                to="/register"
+                class="butt-blue-header butt-radius"
+                @click="isMenuOpen = false"
+              >
                 Register
               </RouterLink>
             </template>
           </div>
-        </div>
-        <div class="burger-menu">
-          <img @click="isMenuOpen = !isMenuOpen" :src="burgerIcon" alt="Menu" class="burger-icon" />
+          <div class="burger-menu">
+            <img
+              @click="isMenuOpen = !isMenuOpen"
+              :src="burgerIcon"
+              alt="Menu"
+              class="burger-icon"
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -122,3 +122,42 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* Inter Regular */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./assets/fonts/inter-v20-latin-regular.woff2') format('woff2');
+}
+
+/* Inter Medium */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./assets/fonts/inter-v20-latin-500.woff2') format('woff2');
+}
+
+/* Inter Bold */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./assets/fonts/inter-v20-latin-700.woff2') format('woff2');
+}
+
+/* Inter Black */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('./assets/fonts/inter-v20-latin-900.woff2') format('woff2');
+}
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}

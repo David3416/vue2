@@ -14,8 +14,7 @@
     max-width: 500px;
   }
   .header-wrapper {
-    display: grid;
-    grid-template-columns: 180px 2fr;
+    grid-template-columns: 211px 1fr;
   }
   .brush-work {
     top: 240px;
@@ -29,9 +28,6 @@
   .header-list {
     margin-right: auto;
   }
-  .header-wrapper {
-    grid-template-columns: 150px 1fr;
-  }
   .brush-work {
     top: 240px;
     left: 90px;
@@ -39,10 +35,7 @@
   .brush-plan {
     left: 530px;
   }
-  .header-wrapper {
-    display: grid;
-    grid-template-columns: 130px 1fr;
-  }
+
   .footer {
     padding-top: 40px;
   }
@@ -54,28 +47,29 @@
 
   .header-wrapper {
     z-index: 3001;
-    display: block;
   }
   .header-logo {
     z-index: 3002;
-    position: fixed;
   }
   .burger-menu {
-    display: block;
+    width: 92px;
+    height: 35px;
+    display: inline-block;
     z-index: 3001;
     position: fixed;
+    left: calc(95% - 50px);
   }
   .burger-icon {
-    width: 50px;
+    width: 75px;
     height: 35px;
-    display: block;
+    display: inline-block;
     position: fixed;
     z-index: 3001;
   }
   .header-nav {
-    transition: transform 0.3s ease;
     padding-top: 150px;
     padding-left: 20px;
+
     width: 100%;
     height: 100%;
     position: fixed;
@@ -161,10 +155,12 @@
   .header-item-drop-link:hover {
     color: var(--color-white);
   }
-  .butt-yellow,
-  .butt-blue {
+  .butt-yellow {
     display: inline-flex;
     align-self: flex-start;
+    width: 142px;
+    height: 45px;
+    margin-bottom: 10px;
   }
 
   /* header end */
@@ -185,7 +181,8 @@
     font-size: 90px;
   }
   .intro-subtitle {
-    font-size: 30px;
+    font-size: 23px;
+    line-height: 35px;
     max-width: 800px;
   }
   .intro-foto-wrapper {
@@ -210,7 +207,7 @@
     order: -1;
   }
   .brush-work {
-    top: 150px;
+    top: 70px;
     left: 300px;
   }
   /* WORK ENDS    ------------------------------------ */
@@ -224,7 +221,7 @@
   /* plan ends ---------- */
   /* task starts */
   .taskkey-subtitle {
-    font-size: 30px;
+    font-size: 23px;
   }
   .brush-taskkey {
     top: 140px;
@@ -233,17 +230,25 @@
   .footer {
     padding-top: 40px;
   }
-  .butt-blue-header,
-  .butt-yellow-header {
-    padding: 35px 1px;
-    justify-content: center;
-    text-align: center;
+  .butt-blue-header {
     width: 220px;
-    margin-bottom: 20px;
+    width: 152px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 35px;
+    justify-content: center;
+  }
+  .butt-blue-header:hover {
+    background-color: var(--button-blue-hover);
+    color: var(--color-white);
   }
   /* task ends */
 }
 @media (max-width: 900px) {
+  .burger-icon {
+    padding-right: 17px;
+  }
   .plans {
     grid-template-columns: 1fr;
   }
@@ -271,7 +276,7 @@
     margin-bottom: 40px;
   }
   .plan-sub-title {
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 40px;
     line-height: 40px;
   }
@@ -280,7 +285,7 @@
   }
   .plan-feature {
     margin-bottom: 40px;
-    font-size: 40px;
+    font-size: 30px;
     line-height: 40px;
   }
   .brush-taskkey {
@@ -357,7 +362,7 @@
     top: 55px;
   }
   .trusted-subtitle {
-    font-size: 40px;
+    font-size: 30px;
     line-height: 40px;
   }
 }
