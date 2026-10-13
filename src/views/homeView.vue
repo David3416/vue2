@@ -178,11 +178,14 @@ export default {
             <h1 class="section-title">Lorem ipsum</h1>
             <img :src="brushImg" class="title-brush brush-intro" />
             <p class="intro-subtitle">
-              Project management software that enables your teams to collaborate, plan, analyze and
-              manage everyday tasks
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+              dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+              nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+              quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
+              nec, vulputate eget, arcu.
             </p>
 
-            <p class="butt-blue butt-radius">Try Whitepace free</p>
+            <p class="butt-blue butt-radius">Lorem ipsum dolor sit amet</p>
           </div>
 
           <div class="intro-foto-wrapper">
@@ -203,11 +206,14 @@ export default {
             <h1 class="section-title">Lorem ipsum</h1>
             <img :src="brushImg" class="title-brush brush-work" />
             <p class="intro-subtitle">
-              With whitepace, share your notes with your colleagues and collaborate on them. You can
-              also publish a note to the internet and share the URL with others.
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+              dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+              nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+              quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
+              nec, vulputate eget, arcu.
             </p>
 
-            <p class="butt-blue butt-radius">Try Whitepace free</p>
+            <p class="butt-blue butt-radius">Lorem ipsum</p>
           </div>
         </div>
       </div>
@@ -222,8 +228,11 @@ export default {
             <h1 class="section-title">Lorem ipsum</h1>
             <img :src="brushImg" class="title-brush brush-plan" />
             <p class="plan-subtitle">
-              With whitepace, share your notes with your colleagues and collaborate on them. You can
-              also publish a note to the internet and share the URL with others.
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+              dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+              nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+              quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
+              nec, vulputate eget, arcu.
             </p>
           </div>
           <div class="plans">
@@ -284,9 +293,11 @@ export default {
         <img :src="taskKey" class="task-key-bg" />
         <img :src="brushImg" class="title-brush brush-taskkey" />
         <p class="taskkey-subtitle">
-          Access your notes from your computer, phone or tablet by synchronising with various
-          services, including whitepace, Dropbox and OneDrive. The app is available on Windows,
-          macOS, Linux, Android and iOS. A terminal app is also available!
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+          dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+          nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+          sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec,
+          vulputate eget, arcu.
         </p>
         <a href="#!" class="butt-blue butt-radius task-key-butt">Try Taskey</a>
       </div>
@@ -300,8 +311,11 @@ export default {
           <h1 class="section-title">Lorem ipsum</h1>
           <img :src="brushImg" class="title-brush brush-trust" />
           <p class="trusted-subtitle">
-            Whether you want to get organized, keep your personal life on track, or boost workplace
-            productivity, Evernote has the right plan for you.
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+            dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+            nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+            sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec,
+            vulputate eget, arcu.
           </p>
         </div>
 

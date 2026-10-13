@@ -153,9 +153,9 @@ table {
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 900;
+  font-weight: 700;
   font-display: swap;
-  src: url('./assets/fonts/inter-v20-latin-900.woff2') format('woff2');
+  src: url('./assets/fonts/inter-v20-latin-700.woff2') format('woff2');
 }
 body {
   font-family: 'Inter', sans-serif;

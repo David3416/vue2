@@ -55,12 +55,12 @@ export default {
         <input v-model="password" type="password" />
       </div>
 
-      <div>
+      <div class="handleAvatarClass">
         <label>Avatar</label>
-        <input type="file" @change="handleAvatar" accept="image/*" />
+        <input type="file" @change="handleAvatar" accept="image/*" class="handleAvatarClass" />
       </div>
 
-      <button type="submit" class="butt-yellow butt-radius">Register</button>
+      <button type="submit" class="butt-yellow butt-radius reg-sub">Register</button>
     </form>
 
     <div class="butt-yellow butt-radius">
